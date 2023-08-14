@@ -21,6 +21,7 @@ class SettingFragment : Fragment() {
     private val ladderMaxiMumSpeed = 6
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        viewModel = (requireActivity() as MainActivity).mainViewModel
     }
 
     override fun onCreateView(
@@ -28,7 +29,6 @@ class SettingFragment : Fragment() {
         savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentSettingBinding.inflate(inflater)
-        viewModel = (requireActivity() as MainActivity).mainViewModel
         ladderSpeed = viewModel.getPreference(viewModel.HORSE_SPEED_KEY,3)
 
         initView()
@@ -38,17 +38,16 @@ class SettingFragment : Fragment() {
 
     private fun initView(){
         setSpeedText(ladderSpeed)
+
         binding.speedMinusButton.setOnClickListener{
-            ladderSpeed =
-                if(ladderSpeed > ladderMinimumSpeed)
+            ladderSpeed = if(ladderSpeed > ladderMinimumSpeed)
                     ladderSpeed - 1 else ladderMinimumSpeed
 
             setSpeedText(ladderSpeed)
         }
 
         binding.speedPlusButton.setOnClickListener{
-            ladderSpeed =
-                if(ladderSpeed < ladderMaxiMumSpeed)
+            ladderSpeed = if(ladderSpeed < ladderMaxiMumSpeed)
                     ladderSpeed  + 1 else ladderMaxiMumSpeed
 
             setSpeedText(ladderSpeed)
@@ -56,6 +55,7 @@ class SettingFragment : Fragment() {
 
         binding.speedConfirmButton.setOnClickListener{
             viewModel.setSpeed(viewModel.HORSE_SPEED_KEY,ladderSpeed)
+            ladder.makeToast(this.requireActivity(),"속도 $ladderSpeed 설정 완료!")
         }
     }
 

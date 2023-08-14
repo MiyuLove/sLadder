@@ -1,8 +1,19 @@
 package com.cektjtroccccc.sladder.LadderUtil
 
+import android.app.Activity
+import android.widget.Toast
+
 class LadderUtility {
     companion object{
         val ladder = LadderUtility()
+    }
+
+    private var toast : Toast? = null
+
+    fun makeToast(activity: Activity, message : String,){
+        toast?.cancel()
+        toast = Toast.makeText(activity.applicationContext, message, Toast.LENGTH_SHORT)
+        toast?.show()
     }
 
     fun logLadder(text : String){

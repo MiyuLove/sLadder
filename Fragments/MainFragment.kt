@@ -12,18 +12,9 @@ import androidx.navigation.Navigation
 import com.cektjtroccccc.sladder.R
 import com.cektjtroccccc.sladder.databinding.FragmentMainBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [MainFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MainFragment : Fragment() {
     lateinit var binding : FragmentMainBinding
+    private var exitButtonClicked = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,8 +52,6 @@ class MainFragment : Fragment() {
         }
     }
 
-    //exitButton & exitButtonClicked 함께 꼭 사용되어야 함.
-    private var exitButtonClicked = 0
     private fun exitButton(){
         exitButtonClicked ++
         if(exitButtonClicked > 1){

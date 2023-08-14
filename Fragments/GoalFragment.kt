@@ -47,6 +47,7 @@ class GoalFragment : Fragment() {
 
         binding.confirmButton.setOnClickListener {
             viewModel.setResult(viewModel.CONFIRM_RESULT_KEY,confirmNumber)
+            LadderUtility.ladder.makeToast(this.requireActivity(),"결과번호 ${confirmNumber+1} 설정 완료!")
         }
     }
 }

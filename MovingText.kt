@@ -20,10 +20,6 @@ class MovingText (context: Context, w : Int, h : Int, t : String, textSize : Flo
         this.textSize = textSize
     }
 
-    fun viewAnimationXY(xy : List<Int>){
-
-    }
-
     fun viewAnimationY(y:Int, nextAction : () ->Unit, speed : Long = 3){
         this.animate()
             .translationY(y.toFloat())

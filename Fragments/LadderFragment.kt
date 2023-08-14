@@ -15,14 +15,12 @@ import com.cektjtroccccc.sladder.MainViewModel
 import com.cektjtroccccc.sladder.MovingText
 import com.cektjtroccccc.sladder.R
 import com.cektjtroccccc.sladder.databinding.FragmentLadderBinding
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.runBlocking
 import java.util.LinkedList
 import java.util.Queue
 
@@ -171,8 +169,8 @@ class LadderFragment : Fragment() {
         }
     }
 
-    private fun movingHorse(horse: List<MovingText>) : Job{
-        return GlobalScope.launch (Dispatchers.Main){
+    private fun movingHorse(horse: List<MovingText>) =
+        GlobalScope.launch (Dispatchers.Main){
             while(isActive ){
                 var ladderCount = 0
                 for(i in 0 until ladderLine){
@@ -186,11 +184,7 @@ class LadderFragment : Fragment() {
                         )
                     }
                     else{
-                        horse[i].viewAnimationY(
-                            _ladderHeight + _paddingTop - _horseWidth/3,
-                            {},
-                            speed
-                        )
+                        horse[i].viewAnimationY(_ladderHeight + _paddingTop - _horseWidth/3, {}, speed)
                         ladderCount ++
                     }
                 }
@@ -206,7 +200,6 @@ class LadderFragment : Fragment() {
                     break
                 }
             }
-        }
     }
 
     private fun buttonInit(horseGroup : List<MovingText>){
@@ -237,6 +230,8 @@ class LadderFragment : Fragment() {
         }
     }
 
+    //LadderManager에서 화면 크기를 받으면 그에 따른 margin값 생성을 해주는 클래스를
+    //만드는 것이 훨씬 낫지 않을까?
     private fun makeHorseRoute(ladderRoute : List<List<Int>>) : ArrayList<Queue<Pair<Int, Int>>> {
         val movingList = arrayListOf<Queue<Pair<Int, Int>>>()
 

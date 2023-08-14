@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/introFragment">
+    <fragment
+        android:id="@+id/introFragment"
+        android:name="com.cektjtroccccc.sladder.Fragments.IntroFragment"
+        android:label="fragment_intro"
+        tools:layout="@layout/fragment_intro" >
+        <action
+            android:id="@+id/action_introFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.cektjtroccccc.sladder.Fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_settingFragment"
+            app:destination="@id/settingFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_readyFragment"
+            app:destination="@id/readyFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.cektjtroccccc.sladder.Fragments.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
+    <fragment
+        android:id="@+id/goalFragment"
+        android:name="com.cektjtroccccc.sladder.Fragments.GoalFragment"
+        android:label="fragment_goal"
+        tools:layout="@layout/fragment_goal" />
+    <fragment
+        android:id="@+id/readyFragment"
+        android:name="com.cektjtroccccc.sladder.Fragments.ReadyFragment"
+        android:label="fragment_ready"
+        tools:layout="@layout/fragment_ready" >
+        <action
+            android:id="@+id/action_readyFragment_to_ladderFragment"
+            app:destination="@id/ladderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ladderFragment"
+        android:name="com.cektjtroccccc.sladder.Fragments.LadderFragment"
+        android:label="fragment_ladder"
+        tools:layout="@layout/fragment_ladder" >
+        <action
+            android:id="@+id/action_ladderFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <action
+            android:id="@+id/action_ladderFragment_to_readyFragment"
+            app:destination="@id/readyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.cektjtroccccc.sladder.Fragments.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_readyFragment"
+            app:destination="@id/readyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.cektjtroccccc.sladder.Fragments.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_goalFragment"
+            app:destination="@id/goalFragment" />
+    </fragment>
+
+</navigation>

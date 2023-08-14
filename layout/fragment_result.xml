@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.ResultFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ownglyp"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
+            android:text="SLadder\nGame"
+            android:textAlignment="center"
+            android:textColor="#BAE8FF"
+            android:textSize="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/resultNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/result_number_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ownglyp"
+            android:text="정말 축하합니다~"
+            android:textColor="@color/light_blue_600"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toTopOf="@+id/resultNumber"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/resultNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#79D6EDFF"
+            android:fontFamily="@font/ownglyp"
+            android:text="@string/hello_blank_fragment"
+            android:textColor="@color/light_blue_600"
+            android:textSize="40sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/result_number_bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ownglyp"
+            android:text="당첨 되셨습니다~"
+            android:textColor="@color/light_blue_600"
+            android:textSize="40sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/resultNumber" />
+        <Button
+            android:id="@+id/replay_button"
+            android:text="다 시 하 기"
+            android:textSize="50sp"
+            android:fontFamily="@font/ownglyp"
+            android:layout_width="match_parent"
+            android:textColor="@color/light_blue_600"
+            android:background="@drawable/btn_color"
+            android:layout_margin="30dp"
+            android:layout_height="80dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>

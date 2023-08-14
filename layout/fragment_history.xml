@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragments.HistoryFragment">
+
+    <Button
+        android:id="@+id/confirm_result_fragment_button"
+        android:text="결과를 확정하세요!"
+        android:textSize="54sp"
+        android:fontFamily="@font/ownglyp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:background="@drawable/btn_color"
+        android:textColor="#BAE8FF"
+        />
+
+</FrameLayout>

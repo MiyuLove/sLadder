@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.GoalFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/sLadderBanner"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/ownglyp"
+            android:gravity="center"
+            android:shadowColor="@color/black"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="5"
+            android:text="당첨 번호\n선택"
+            android:textAlignment="center"
+            android:textColor="#BAE8FF"
+            android:textSize="100dp"
+            app:layout_constraintBottom_toTopOf="@+id/warning_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/warning_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ownglyp"
+            android:gravity="center"
+            android:text="사다리 타기 최대 번호보다\n낮아야 적용됩니다!"
+            android:textSize="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"
+            app:layout_constraintVertical_bias="0.316">
+
+            <Button
+                android:id="@+id/minus_button_goal"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/btn_bd"
+                android:backgroundTint="@color/white"
+                android:text="－"
+                android:textColor="#BAE8FF"
+                android:textSize="70dp" />
+
+            <TextView
+                android:id="@+id/confirm_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="-X-"
+
+                android:textAlignment="center"
+                android:textColor="#BAE8FF"
+                android:textSize="70dp"
+                android:textStyle="bold" />
+
+
+            <Button
+                android:id="@+id/plus_button_goal"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/btn_bd"
+                android:backgroundTint="@color/white"
+                android:text="＋"
+                android:textColor="#BAE8FF"
+                android:textSize="70dp" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="250dp"
+            android:layout_height="100dp"
+            android:layout_margin="20dp"
+            android:background="@drawable/btn_color"
+            android:fontFamily="@font/ownglyp"
+            android:shadowColor="#0000FB"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="1"
+            android:text="번호 저장"
+            android:textColor="#BAE8FF"
+
+            android:textSize="70dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
